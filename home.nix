@@ -17,7 +17,9 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    devbox
+    gh
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -43,13 +45,21 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/starship.toml".source = config/starship.toml;
+    #".config/starship.toml".source = config/starship.toml;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+  };
+
+  xdg.enable = true;
+  xdg.configFile = {
+    "alacritty".source = ./config/alacritty;
+    "nix".source = ./config/nix;
+    "starship.toml".source = ./config/starship.toml;
+    "tmux/tmux.conf".source = ./config/tmux/tmux.conf;
   };
 
   # Home Manager can also manage your environment variables through
