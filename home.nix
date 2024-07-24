@@ -38,7 +38,7 @@
 
   home.shellAliases = {
     "cat" = "bat";
-    "home-manager-update" = "home-manager switch --flake /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/";
+    "dotfiles-update" = "home-manager switch --flake /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/";
     "ll" = "ls -lh";
     "la" = "ls -lah";
     "vim" = "nvim";
