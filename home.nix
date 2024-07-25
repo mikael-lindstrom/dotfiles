@@ -16,6 +16,7 @@
     pkgs.git
     pkgs.go
     unstable-pkgs.neovim
+    pkgs.nodejs
     pkgs.ripgrep
     pkgs.xq
   ];
@@ -28,6 +29,9 @@
     "nix".source = ./config/nix;
     "starship.toml".source = ./config/starship.toml;
     "tmux/tmux.conf".source = ./config/tmux/tmux.conf;
+
+    # Special case since nvim directory needs to be writable to install plugins
+    "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/src/github.com/mikael-lindstrom/dotfiles/config/nvim";
   };
 
   home.sessionVariables = {
