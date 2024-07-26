@@ -9,7 +9,6 @@
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli
-    pkgs.bat
     pkgs.cargo
     pkgs.devbox
     pkgs.gh
@@ -37,7 +36,6 @@
   home.sessionVariables = {
     AWS_VAULT_PROMPT = "ykman";
     EDITOR = "nvim";
-    BAT_THEME = "gruvbox-dark";
   };
 
   home.shellAliases = {
@@ -63,6 +61,11 @@
       ];
       theme = "agnoster";
     };
+  };
+
+  programs.bat = {
+    enable = true;
+    config.theme = "gruvbox-dark";
   };
 
   programs.starship = {
