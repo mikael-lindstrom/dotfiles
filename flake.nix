@@ -4,6 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,14 +23,24 @@
       unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
     in
     {
-      homeConfigurations."mikael" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      darwinConfigurations.Mikaels-Virtual-Machine =
+        inputs.darwin.lib.darwinSystem {
+          inherit system pkgs;
+          modules = [
+            ./modules/darwin
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit unstable-pkgs;
+                };
+                users.mikael.imports = [ ./modules/home-manager ];
+              };
+            }
+          ];
 
-        modules = [ ./home.nix ];
-
-        extraSpecialArgs = {
-          inherit unstable-pkgs;
         };
-      };
     };
 }

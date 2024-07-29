@@ -1,11 +1,10 @@
 { config, pkgs, unstable-pkgs, ... }:
 
 {
-  home.username = "mikael";
-  home.homeDirectory = "/Users/mikael";
   home.stateVersion = "24.05";
 
   home.packages = [
+    pkgs.alacritty
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli
@@ -24,10 +23,10 @@
 
   xdg.enable = true;
   xdg.configFile = {
-    "alacritty".source = ./config/alacritty;
-    "nix".source = ./config/nix;
-    "starship.toml".source = ./config/starship.toml;
-    "tmux/tmux.conf".source = ./config/tmux/tmux.conf;
+    "alacritty".source = ../../config/alacritty;
+    "nix".source = ../../config/nix;
+    "starship.toml".source = ../../config/starship.toml;
+    "tmux/tmux.conf".source = ../../config/tmux/tmux.conf;
 
     # Special case since nvim directory needs to be writable to install plugins
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/src/github.com/mikael-lindstrom/dotfiles/config/nvim";
@@ -40,7 +39,7 @@
 
   home.shellAliases = {
     "cat" = "bat";
-    "dotfiles-update" = "home-manager switch --flake /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/";
+    "dotfiles-update" = "darwin-rebuild switch --flake /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/";
     "ll" = "ls -lh";
     "la" = "ls -lah";
     "vim" = "nvim";
