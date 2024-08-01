@@ -1,6 +1,24 @@
 { pkgs, ... }:
 
 {
+  homebrew = {
+    enable = true;
+
+    # TODO: add more options for homebrew
+
+    taps = [
+      "homebrew/core"
+      "homebrew/bundle"
+      "homebrew/cask"
+    ];
+
+    casks = [
+      {
+        name = "signal";
+      }
+    ];
+  };
+
   # Install only JetBrainsMono
   fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
