@@ -34,7 +34,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = {
-                  inherit unstable-pkgs;
+                  inherit self unstable-pkgs;
                 };
                 users.mikael.imports = [ ./modules/home-manager ];
               };

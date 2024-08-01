@@ -1,4 +1,4 @@
-{ config, pkgs, unstable-pkgs, ... }:
+{ self, config, pkgs, unstable-pkgs, ... }:
 
 {
   home.stateVersion = "24.05";
@@ -23,10 +23,10 @@
 
   xdg.enable = true;
   xdg.configFile = {
-    "alacritty".source = ../../config/alacritty;
-    "nix".source = ../../config/nix;
-    "starship.toml".source = ../../config/starship.toml;
-    "tmux/tmux.conf".source = ../../config/tmux/tmux.conf;
+    "alacritty".source = "${self}/config/alacritty";
+    "nix".source = "${self}/config/nix";
+    "starship.toml".source = "${self}/config/starship.toml";
+    "tmux/tmux.conf".source = "${self}/config/tmux/tmux.conf";
 
     # Special case since nvim directory needs to be writable to install plugins
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/src/github.com/mikael-lindstrom/dotfiles/config/nvim";
