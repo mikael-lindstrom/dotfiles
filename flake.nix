@@ -35,45 +35,36 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-homebrew, homebrew-core, homebrew-bundle, homebrew-cask, ... }@inputs:
     let
+      user = "mikael";
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
       unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       darwinConfigurations.Mikaels-Virtual-Machine =
-        inputs.darwin.lib.darwinSystem {
-          inherit system pkgs;
-          modules = [
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                enableRosetta = false;
-                user = "mikael";
-
-                taps = {
-                  "homebrew/homebrew-core" = homebrew-core;
-                  "homebrew/homebrew-bundle" = homebrew-bundle;
-                  "homebrew/homebrew-cask" = homebrew-cask;
-                };
-
-                mutableTaps = false;
+        inputs.darwin.lib.darwinSystem
+          {
+            inherit system pkgs;
+            specialArgs =
+              {
+                inherit user nix-homebrew homebrew-core homebrew-bundle homebrew-cask;
               };
-            }
-            ./modules/darwin
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit self unstable-pkgs;
+            modules = [
+              ./modules/nix-homebrew
+              ./modules/darwin
+              home-manager.darwinModules.home-manager
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  extraSpecialArgs = {
+                    inherit self unstable-pkgs;
+                  };
+                  users.mikael.imports = [ ./modules/home-manager ];
                 };
-                users.mikael.imports = [ ./modules/home-manager ];
-              };
-            }
-          ];
+              }
+            ];
 
-        };
+          };
     };
 }
