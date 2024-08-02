@@ -21,12 +21,10 @@
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
-
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
-
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
@@ -39,6 +37,7 @@
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
       unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
+      src = self;
     in
     {
       darwinConfigurations.Mikaels-Virtual-Machine =
@@ -47,24 +46,13 @@
             inherit system pkgs;
             specialArgs =
               {
-                inherit user nix-homebrew homebrew-core homebrew-bundle homebrew-cask;
+                inherit user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask;
               };
             modules = [
               ./modules/nix-homebrew
               ./modules/darwin
-              home-manager.darwinModules.home-manager
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  extraSpecialArgs = {
-                    inherit self unstable-pkgs;
-                  };
-                  users.mikael.imports = [ ./modules/home-manager ];
-                };
-              }
+              ./modules/home-manager/default.nix
             ];
-
           };
     };
 }
