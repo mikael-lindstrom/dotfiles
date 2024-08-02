@@ -12,10 +12,20 @@
       "homebrew/cask"
     ];
 
+    brews = [
+      "teleport" # latest version marked as broken in nix pkgs
+    ];
+
     casks = [
-      {
-        name = "signal";
-      }
+      "1password"
+      "discord"
+      "docker"
+      "elgato-control-center"
+      "microsoft-remote-desktop"
+      "signal"
+      "slack"
+      "spotify"
+      "utm"
     ];
   };
 
