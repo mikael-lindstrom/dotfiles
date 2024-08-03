@@ -40,6 +40,21 @@
       src = self;
     in
     {
+      darwinConfigurations.Mikaels-MBP =
+        inputs.darwin.lib.darwinSystem
+          {
+            inherit system pkgs;
+            specialArgs =
+              {
+                inherit user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask;
+              };
+            modules = [
+              ./modules/nix-homebrew
+              ./modules/darwin
+              ./modules/home-manager/default.nix
+            ];
+          };
+
       darwinConfigurations.Mikaels-Virtual-Machine =
         inputs.darwin.lib.darwinSystem
           {

@@ -43,9 +43,9 @@ in
 
   home.shellAliases = {
     "cat" = "bat";
-    "dotfiles-build" = "pushd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/; darwin-rebuild build --flake .; popd";
+    "dotfiles-build" = "pushd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/; darwin-rebuild build --flake .#$(hostname -s); popd";
     "dotfiles-latest-diff" = "nix store diff-closures /nix/var/nix/profiles/system-*-link(om[2]) /nix/var/nix/profiles/system-*-link(om[1])";
-    "dotfiles-switch" = "pushd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/; darwin-rebuild switch --flake .; popd";
+    "dotfiles-switch" = "pushd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/; darwin-rebuild switch --flake .#$(hostname -s); popd";
     "dotfiles-update" = "pushd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles/; nix flake update; dotfiles-latest-diff; popd";
     "ll" = "ls -lh";
     "la" = "ls -lah";
