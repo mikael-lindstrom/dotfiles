@@ -7,7 +7,6 @@ in
   home.stateVersion = "24.05";
 
   home.packages = [
-    pkgs.alacritty
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli

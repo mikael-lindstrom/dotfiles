@@ -27,6 +27,7 @@
 
     casks = [
       "1password"
+      "alacritty"
       "discord"
       "docker"
       "elgato-control-center"
