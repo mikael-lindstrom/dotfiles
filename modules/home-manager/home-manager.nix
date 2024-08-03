@@ -18,7 +18,6 @@ in
     pkgs.go
     unstable-pkgs.neovim
     pkgs.nodejs
-    pkgs.rectangle
     pkgs.ripgrep
     pkgs.xq
   ];

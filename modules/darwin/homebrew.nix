@@ -31,6 +31,7 @@
       "docker"
       "elgato-control-center"
       "microsoft-remote-desktop"
+      "rectangle"
       "signal"
       "slack"
       "spotify"
