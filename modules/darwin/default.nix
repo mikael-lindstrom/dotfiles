@@ -9,9 +9,21 @@
   # Enable zsh with nix-darwin
   programs.zsh.enable = true;
 
-  # Auto upgrade nix package and enable daemon service
-  nix.package = pkgs.nix;
+  # Enable daemon service
   services.nix-daemon.enable = true;
+
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      keep-derivations = true;
+      keep-outputs = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
+    };
+  };
 
   # Currently needs to be set https://github.com/LnL7/nix-darwin/issues/682
   users.users.${user}.home = "/Users/${user}";
