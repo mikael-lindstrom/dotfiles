@@ -18,6 +18,7 @@ in
     unstable-pkgs.neovim
     pkgs.nodejs
     pkgs.ripgrep
+    pkgs.tmux
     pkgs.xq
   ];
 
