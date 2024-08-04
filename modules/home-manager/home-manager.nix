@@ -30,7 +30,6 @@ in
     "alacritty".source = "${configDir}/alacritty";
     "nix".source = "${configDir}/nix";
     "starship.toml".source = "${configDir}/starship.toml";
-    "tmux/tmux.conf".source = "${configDir}/tmux/tmux.conf";
 
     # Special case since nvim directory needs to be writable to install plugins
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/src/github.com/mikael-lindstrom/dotfiles/config/nvim";
@@ -85,6 +84,44 @@ in
   programs.zoxide = {
     enable = true;
   };
+
+  programs.tmux =
+    {
+      enable = true;
+      terminal = "tmux-256color";
+      historyLimit = 10000;
+      clock24 = true;
+      mouse = true;
+      prefix = "C-a";
+      escapeTime = 10;
+      extraConfig = ''
+        bind -r j resize-pane -D 5
+        bind -r k resize-pane -U 5
+        bind -r l resize-pane -R 5
+        bind -r h resize-pane -L 5
+        bind -r m resize-pane -Z
+
+        unbind %
+        bind | split-window -h -c "#{pane_current_path}"
+
+        unbind '"'
+        bind - split-window -v -c "#{pane_current_path}"
+
+        set -g status-position top
+      '';
+      plugins = [
+        unstable-pkgs.tmuxPlugins.vim-tmux-navigator
+        unstable-pkgs.tmuxPlugins.gruvbox
+        unstable-pkgs.tmuxPlugins.resurrect
+        {
+          plugin = pkgs.tmuxPlugins.continuum;
+          extraConfig = ''
+            set -g @continuum-restore 'on'
+            set -g @continuum-save-interval '10'
+          '';
+        }
+      ];
+    };
 
   programs.direnv = {
     enable = true;
