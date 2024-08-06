@@ -18,6 +18,7 @@ in
     unstable-pkgs.neovim
     pkgs.nodejs
     pkgs.ripgrep
+    unstable-pkgs.teleport
     pkgs.tmux
     pkgs.xq
   ];
@@ -110,9 +111,9 @@ in
         set -g status-position top
       '';
       plugins = [
-        unstable-pkgs.tmuxPlugins.vim-tmux-navigator
+        pkgs.tmuxPlugins.vim-tmux-navigator
         unstable-pkgs.tmuxPlugins.gruvbox
-        unstable-pkgs.tmuxPlugins.resurrect
+        pkgs.tmuxPlugins.resurrect
         {
           plugin = pkgs.tmuxPlugins.continuum;
           extraConfig = ''

@@ -21,10 +21,6 @@
       "homebrew/cask"
     ];
 
-    brews = [
-      "teleport" # latest version marked as broken in nix pkgs
-    ];
-
     casks = [
       "1password"
       "alacritty"

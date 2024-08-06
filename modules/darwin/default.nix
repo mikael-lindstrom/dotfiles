@@ -3,8 +3,15 @@
 {
   imports = [ ./homebrew.nix ];
 
+  # Add homebrew to the system path
+  environment.systemPath = [ "/opt/homebrew/bin" "/opt/homebrew/sbin" ];
+
   # Install only JetBrainsMono
-  fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  fonts.packages = [
+    (pkgs.nerdfonts.override {
+      fonts = [ "JetBrainsMono" ];
+    })
+  ];
 
   # Enable zsh with nix-darwin
   programs.zsh.enable = true;
