@@ -6,6 +6,7 @@ $git_state\
 $git_status\
 $fill\
 $cmd_duration\
+$nix_shell\
 $kubernetes\
 $aws\
 $azure\
@@ -43,3 +44,8 @@ symbol = ' 󱃾 '
 style = 'blue'
 disabled = false
 
+[nix_shell]
+disabled = false
+symbol = '❄️ '
+style = 'blue'
+format = '[$state( \($name\))](bold blue)'
