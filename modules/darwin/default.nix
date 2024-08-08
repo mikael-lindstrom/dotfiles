@@ -25,6 +25,7 @@
       keep-derivations = true;
       keep-outputs = true;
       experimental-features = [ "nix-command" "flakes" ];
+      extra-nix-path = "nixpkgs=flake:nixpkgs";
     };
     gc = {
       automatic = true;
