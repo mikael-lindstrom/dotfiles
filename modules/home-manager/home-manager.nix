@@ -10,6 +10,7 @@ in
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli
+    pkgs.azure-cli
     pkgs.cargo
     pkgs.devbox
     pkgs.gh
