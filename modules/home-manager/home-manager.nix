@@ -12,7 +12,7 @@ in
     pkgs.awscli
     pkgs.azure-cli
     pkgs.cargo
-    pkgs.devbox
+    unstable-pkgs.devbox
     pkgs.gh
     pkgs.git
     pkgs.go
