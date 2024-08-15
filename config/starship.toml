@@ -48,4 +48,6 @@ disabled = false
 disabled = false
 symbol = '❄️ '
 style = 'blue'
+unknown_msg = 'unknown-nix-shell'
+heuristic = true
 format = '[$state( \($name\))](bold blue)'
