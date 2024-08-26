@@ -29,6 +29,7 @@
       "docker"
       "elgato-control-center"
       "microsoft-remote-desktop"
+      "multipass"
       "rectangle"
       "signal"
       "slack"
