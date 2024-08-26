@@ -1,4 +1,4 @@
-{ src, config, pkgs, unstable-pkgs, ... }:
+{ system, src, config, pkgs, unstable-pkgs, neovim-flake, ... }:
 
 let
   configDir = "${src}/config";
@@ -16,25 +16,21 @@ in
     pkgs.gh
     pkgs.git
     pkgs.go
-    unstable-pkgs.neovim
     pkgs.nodejs
     pkgs.ripgrep
     unstable-pkgs.teleport
     pkgs.tmux
     pkgs.xq
+    neovim-flake.packages.${system}.default
   ];
 
   home.file = { };
-
 
   xdg.enable = true;
   xdg.configFile = {
     "alacritty".source = "${configDir}/alacritty";
     "nix".source = "${configDir}/nix";
     "starship.toml".source = "${configDir}/starship.toml";
-
-    # Special case since nvim directory needs to be writable to install plugins
-    "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/src/github.com/mikael-lindstrom/dotfiles/config/nvim";
   };
 
   home.sessionVariables = {
@@ -90,13 +86,14 @@ in
   programs.tmux =
     {
       enable = true;
-      terminal = "tmux-256color";
+      terminal = "screen-256color";
       historyLimit = 10000;
       clock24 = true;
       mouse = true;
       prefix = "C-a";
       escapeTime = 10;
       extraConfig = ''
+        set-option -sa terminal-features ",alacritty*:RGB"
         bind -r j resize-pane -D 5
         bind -r k resize-pane -U 5
         bind -r l resize-pane -R 5

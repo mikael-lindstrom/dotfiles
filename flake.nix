@@ -29,9 +29,11 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    neovim-flake.url = "github:mikael-lindstrom/neovim-flake";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-homebrew, homebrew-core, homebrew-bundle, homebrew-cask, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-homebrew, homebrew-core, homebrew-bundle, homebrew-cask, neovim-flake, ... }@inputs:
     let
       user = "mikael";
       system = "aarch64-darwin";
@@ -46,7 +48,7 @@
             inherit system pkgs;
             specialArgs =
               {
-                inherit user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask;
+                inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
               };
             modules = [
               ./modules/nix-homebrew
@@ -61,7 +63,7 @@
             inherit system pkgs;
             specialArgs =
               {
-                inherit user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask;
+                inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
               };
             modules = [
               ./modules/nix-homebrew

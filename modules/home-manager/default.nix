@@ -1,4 +1,4 @@
-{ user, src, unstable-pkgs, home-manager, ... }:
+{ system, user, src, unstable-pkgs, home-manager, neovim-flake, ... }:
 
 {
   imports = [ home-manager.darwinModules.home-manager ];
@@ -7,7 +7,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit src unstable-pkgs;
+      inherit system src unstable-pkgs neovim-flake;
     };
     users.${user}.imports = [ ./home-manager.nix ];
   };
