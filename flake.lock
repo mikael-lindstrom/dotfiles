@@ -145,14 +145,15 @@
     "neovim-flake": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "treesitter": "treesitter"
       },
       "locked": {
-        "lastModified": 1724707130,
-        "narHash": "sha256-Mf2t8ByS4YOls4QJhia20mJLjZq+SkQ0RZecdhhfhrY=",
+        "lastModified": 1724847686,
+        "narHash": "sha256-3hYSCI3GAansC0SmeAxSGyOCOJBwWObp7ugCKX1HRhg=",
         "owner": "mikael-lindstrom",
         "repo": "neovim-flake",
-        "rev": "bb3e983d6ba0fe39eb5912607ee388c62b98cb96",
+        "rev": "71d6456d432be70a2752eaeb3562e396e151bab3",
         "type": "github"
       },
       "original": {
@@ -314,6 +315,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "treesitter": {
+      "locked": {
+        "lastModified": 1719764577,
+        "narHash": "sha256-304HNA/XvmyfD7JZfpqF4dEBnbUYci/gMZvDThXmYkE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "19581e2ce8bc43f898ef724f8072ebf62bebb325",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "19581e2ce8bc43f898ef724f8072ebf62bebb325",
         "type": "github"
       }
     }
