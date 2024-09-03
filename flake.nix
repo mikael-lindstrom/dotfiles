@@ -42,6 +42,8 @@
       src = self;
     in
     {
+      formatter.aarch64-darwin = pkgs.nixpkgs-fmt;
+
       darwinConfigurations.Mikaels-MBP =
         inputs.darwin.lib.darwinSystem
           {
