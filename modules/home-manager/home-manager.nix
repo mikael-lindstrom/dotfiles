@@ -1,4 +1,4 @@
-{ system, src, config, pkgs, unstable-pkgs, neovim-flake, ... }:
+{ system, src, pkgs, unstable-pkgs, neovim-flake, ... }:
 
 let
   configDir = "${src}/config";
@@ -16,6 +16,7 @@ in
     pkgs.gh
     pkgs.git
     pkgs.go
+    pkgs.neofetch
     pkgs.nodejs
     pkgs.ripgrep
     unstable-pkgs.teleport
