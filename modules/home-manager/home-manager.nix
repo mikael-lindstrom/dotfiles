@@ -17,7 +17,6 @@ in
     pkgs.git
     pkgs.go
     pkgs.neofetch
-    pkgs.nodejs
     pkgs.ripgrep
     unstable-pkgs.teleport
     pkgs.tmux
