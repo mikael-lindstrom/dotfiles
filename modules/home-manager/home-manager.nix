@@ -106,6 +106,10 @@ in
         unbind '"'
         bind - split-window -v -c "#{pane_current_path}"
 
+        set-window-option -g mode-keys vi
+        bind-key -T copy-mode-vi 'v' send -X begin-selection
+        bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+
         set -g status-position top
       '';
       plugins = [
