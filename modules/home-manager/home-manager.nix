@@ -10,7 +10,7 @@ in
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli
-    pkgs.azure-cli
+    (unstable-pkgs.azure-cli.withExtensions [ unstable-pkgs.azure-cli-extensions.bastion unstable-pkgs.azure-cli-extensions.ssh ])
     pkgs.cargo
     unstable-pkgs.devbox
     pkgs.gh
@@ -60,7 +60,9 @@ in
     oh-my-zsh = {
       enable = true;
       plugins = [
+        "azure"
         "git"
+        "kubectl"
       ];
       theme = "agnoster";
     };
