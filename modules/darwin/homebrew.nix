@@ -30,11 +30,14 @@
       "elgato-control-center"
       "microsoft-remote-desktop"
       "multipass"
+      "raycast"
       "rectangle"
       "signal"
       "slack"
+      "steam"
       "spotify"
       "utm"
+      "vlc"
     ];
   };
 }
