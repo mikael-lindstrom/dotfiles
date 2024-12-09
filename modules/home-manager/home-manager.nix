@@ -18,13 +18,15 @@ in
     pkgs.go
     pkgs.neofetch
     pkgs.ripgrep
-    unstable-pkgs.teleport
     pkgs.tmux
     pkgs.xq
     neovim-flake.packages.${system}.default
   ];
 
   home.file = { };
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 
   xdg.enable = true;
   xdg.configFile = {
