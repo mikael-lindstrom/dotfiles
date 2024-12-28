@@ -5,6 +5,7 @@ font-thicken = true
 
 shell-integration-features = no-cursor
 cursor-style = block
+cursor-style-blink = false
 
 palette = 0=#282828
 palette = 1=#cc241d
