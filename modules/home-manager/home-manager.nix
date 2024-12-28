@@ -31,6 +31,7 @@ in
   xdg.enable = true;
   xdg.configFile = {
     "alacritty".source = "${configDir}/alacritty";
+    "ghostty".source = "${configDir}/ghostty";
     "nix".source = "${configDir}/nix";
     "starship.toml".source = "${configDir}/starship.toml";
   };
