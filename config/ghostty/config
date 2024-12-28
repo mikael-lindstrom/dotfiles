@@ -3,6 +3,9 @@ font-size = 14.0
 font-style = "Regular"
 font-thicken = true
 
+shell-integration-features = no-cursor
+cursor-style = block
+
 palette = 0=#282828
 palette = 1=#cc241d
 palette = 2=#98971a
