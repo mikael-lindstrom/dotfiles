@@ -22,32 +22,33 @@ error_symbol = "[x](bold red)"
 vimcmd_symbol = "[<](bold green)"
 
 [aws]
-format = '[$symbol($profile)(\($region\))(\[$duration\])]($style)'
-symbol = "   "
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+style = 'yellow'
+symbol = " "
 
 [azure]
-format = '[$symbol($subscription)]($style) '
+format = '\[[$symbol($subscription)]($style)\]'
 symbol = '󰠅 '
-style = 'blue bold'
+style = 'blue'
 disabled = false
 
 [cmd_duration]
-format = '[⏱ $duration]($style)'
+format = '\[[⏱ $duration]($style)\]'
 
 [directory]
 read_only = " "
 truncation_symbol = '../'
 
 [kubernetes]
-format = '[$symbol$context( \($namespace\))]($style)'
-symbol = ' 󱃾 '
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
+symbol = '☸ '
 style = 'blue'
 disabled = false
 
 [nix_shell]
 disabled = false
-symbol = '❄️ '
+symbol = " "
 style = 'blue'
 unknown_msg = 'unknown-nix-shell'
 heuristic = true
-format = '[$state( \($name\))](bold blue)'
+format = '\[[$state( \($name\))](bold blue)\]'
