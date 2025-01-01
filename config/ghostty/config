@@ -2,6 +2,7 @@ font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 14.0
 font-style = "Regular"
 font-thicken = true
+font-feature = "-calt"
 
 shell-integration-features = no-cursor
 cursor-style = block
