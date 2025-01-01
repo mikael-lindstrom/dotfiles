@@ -44,7 +44,7 @@
     {
       formatter.aarch64-darwin = pkgs.nixpkgs-fmt;
 
-      darwinConfigurations.Mikaels-MBP =
+      darwinConfigurations.Mikaels-MacBook-Pro =
         inputs.darwin.lib.darwinSystem
           {
             inherit system pkgs;
