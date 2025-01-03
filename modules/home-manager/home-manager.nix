@@ -116,6 +116,7 @@ in
         bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
         set -g status-position top
+        set -g default-command "$SHELL"
       '';
       plugins = [
         pkgs.tmuxPlugins.vim-tmux-navigator
