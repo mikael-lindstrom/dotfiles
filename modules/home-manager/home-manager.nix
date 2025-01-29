@@ -82,6 +82,8 @@ in
 
   programs.fzf = {
     enable = true;
+    # current stable version has a bug with fzf-history-widget and zsh
+    package = unstable-pkgs.fzf;
   };
 
   programs.zoxide = {
