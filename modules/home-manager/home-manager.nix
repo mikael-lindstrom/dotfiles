@@ -99,6 +99,7 @@ in
       mouse = true;
       prefix = "C-a";
       escapeTime = 10;
+      sensibleOnTop = false;
       extraConfig = ''
         set-option -sa terminal-features ",alacritty*:RGB"
         bind -r j resize-pane -D 5
@@ -118,7 +119,8 @@ in
         bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
         set -g status-position top
-        set -g default-command "$SHELL"
+        set -gu default-command
+        set -g default-shell "${pkgs.zsh}/bin/zsh"
       '';
       plugins = [
         pkgs.tmuxPlugins.vim-tmux-navigator
