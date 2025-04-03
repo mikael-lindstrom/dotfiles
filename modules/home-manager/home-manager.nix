@@ -16,6 +16,7 @@ in
     pkgs.gh
     pkgs.git
     pkgs.go
+    pkgs.inetutils
     pkgs.neofetch
     pkgs.ripgrep
     pkgs.tmux
@@ -106,7 +107,7 @@ in
         bind -r k resize-pane -U 5
         bind -r l resize-pane -R 5
         bind -r h resize-pane -L 5
-        bind -r m resize-pane -Z
+        bind m resize-pane -Z
 
         unbind %
         bind | split-window -h -c "#{pane_current_path}"
