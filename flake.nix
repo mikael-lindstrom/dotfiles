@@ -59,6 +59,21 @@
             ];
           };
 
+      darwinConfigurations.Mikael-Aidn =
+        inputs.darwin.lib.darwinSystem
+          {
+            inherit system pkgs;
+            specialArgs =
+              {
+                inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
+              };
+            modules = [
+              ./modules/nix-homebrew
+              ./modules/darwin
+              ./modules/home-manager/default.nix
+            ];
+          };
+
       darwinConfigurations.Mikaels-Virtual-Machine =
         inputs.darwin.lib.darwinSystem
           {

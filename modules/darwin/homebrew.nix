@@ -29,7 +29,6 @@
       "docker"
       "elgato-control-center"
       "ghostty"
-      "microsoft-remote-desktop"
       "multipass"
       "raycast"
       "rectangle"
