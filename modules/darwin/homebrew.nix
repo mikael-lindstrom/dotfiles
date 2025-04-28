@@ -28,6 +28,7 @@
       "discord"
       "docker"
       "elgato-control-center"
+      "elgato-wave-link"
       "ghostty"
       "multipass"
       "raycast"
