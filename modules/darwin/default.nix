@@ -29,6 +29,7 @@
   system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
   system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
+  system.defaults.NSGlobalDomain."com.apple.sound.beep.feedback" = 1;
   system.defaults.dock.autohide = true;
   system.defaults.dock.tilesize = 36;
   system.defaults.controlcenter.Bluetooth = true;
