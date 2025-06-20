@@ -7,17 +7,19 @@
   environment.systemPath = [ "/opt/homebrew/bin" "/opt/homebrew/sbin" ];
 
   # Install only JetBrainsMono
-  fonts.packages = [
-    (pkgs.nerdfonts.override {
-      fonts = [ "JetBrainsMono" ];
-    })
-  ];
+  fonts = {
+    packages = [
+      pkgs.nerd-fonts.jetbrains-mono
+    ];
+  };
 
   # Enable zsh with nix-darwin
   programs.zsh.enable = true;
 
   # Managed by determinate systems
   nix.enable = false;
+
+  system.primaryUser = "${user}";
 
   system.defaults.screencapture.location = "/Users/${user}/Documents/Screenshots";
   system.defaults.finder.FXPreferredViewStyle = "Nlsv";
