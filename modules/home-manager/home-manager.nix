@@ -43,10 +43,6 @@ in
 
   home.shellAliases = {
     "cat" = "bat";
-    "dotfiles-build" = "cd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles; darwin-rebuild build --flake .#$(scutil --get LocalHostName)";
-    "dotfiles-latest-diff" = "nix store diff-closures /run/current-system ./result";
-    "dotfiles-switch" = "cd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles; darwin-rebuild switch --flake .#$(scutil --get LocalHostName)";
-    "dotfiles-update" = "cd /Users/mikael/code/src/github.com/mikael-lindstrom/dotfiles; nix flake update; dotfiles-build; dotfiles-latest-diff";
     "ll" = "ls -lh";
     "la" = "ls -lah";
     "vim" = "nvim";
