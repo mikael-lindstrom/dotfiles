@@ -10,7 +10,7 @@ in
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli
-    (unstable-pkgs.azure-cli.withExtensions [ unstable-pkgs.azure-cli-extensions.bastion unstable-pkgs.azure-cli-extensions.ssh ])
+    unstable-pkgs.azure-cli
     pkgs.cargo
     unstable-pkgs.devbox
     pkgs.gh
@@ -18,7 +18,6 @@ in
     pkgs.go
     pkgs.inetutils
     pkgs.neofetch
-    unstable-pkgs.opencode
     pkgs.ripgrep
     pkgs.tmux
     pkgs.xq
