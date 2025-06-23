@@ -33,19 +33,20 @@
     neovim-flake.url = "github:mikael-lindstrom/neovim-flake";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-homebrew, homebrew-core, homebrew-bundle, homebrew-cask, neovim-flake, ... }@inputs:
+  outputs = inputs@{ self, ... }:
     let
       user = "mikael";
       system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-      unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+      unstable-pkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
       src = self;
 
       mkDarwinSystem = hostname:
         inputs.darwin.lib.darwinSystem {
           inherit system pkgs;
           specialArgs = {
-            inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
+            inherit system user src unstable-pkgs;
+            inherit (inputs) home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
           };
           modules = [
             ./modules/nix-homebrew
