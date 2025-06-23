@@ -26,7 +26,7 @@
       "alacritty"
       "google-chrome"
       "discord"
-      "docker"
+      "docker-desktop"
       "elgato-control-center"
       "elgato-wave-link"
       "ghostty"
