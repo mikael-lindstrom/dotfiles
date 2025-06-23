@@ -18,6 +18,7 @@ in
     pkgs.go
     pkgs.inetutils
     pkgs.neofetch
+    unstable-pkgs.opencode
     pkgs.ripgrep
     pkgs.tmux
     pkgs.xq
