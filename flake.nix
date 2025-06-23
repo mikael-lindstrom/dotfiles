@@ -40,53 +40,27 @@
       pkgs = nixpkgs.legacyPackages.${system};
       unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
       src = self;
+
+      mkDarwinSystem = hostname:
+        inputs.darwin.lib.darwinSystem {
+          inherit system pkgs;
+          specialArgs = {
+            inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
+          };
+          modules = [
+            ./modules/nix-homebrew
+            ./modules/darwin
+            ./modules/home-manager/default.nix
+          ];
+        };
     in
     {
       formatter.aarch64-darwin = pkgs.nixpkgs-fmt;
 
-      darwinConfigurations.Mikaels-MacBook-Pro =
-        inputs.darwin.lib.darwinSystem
-          {
-            inherit system pkgs;
-            specialArgs =
-              {
-                inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
-              };
-            modules = [
-              ./modules/nix-homebrew
-              ./modules/darwin
-              ./modules/home-manager/default.nix
-            ];
-          };
-
-      darwinConfigurations.Mikael-Aidn =
-        inputs.darwin.lib.darwinSystem
-          {
-            inherit system pkgs;
-            specialArgs =
-              {
-                inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
-              };
-            modules = [
-              ./modules/nix-homebrew
-              ./modules/darwin
-              ./modules/home-manager/default.nix
-            ];
-          };
-
-      darwinConfigurations.Mikaels-Virtual-Machine =
-        inputs.darwin.lib.darwinSystem
-          {
-            inherit system pkgs;
-            specialArgs =
-              {
-                inherit system user src unstable-pkgs home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
-              };
-            modules = [
-              ./modules/nix-homebrew
-              ./modules/darwin
-              ./modules/home-manager/default.nix
-            ];
-          };
+      darwinConfigurations = {
+        "Mikaels-MacBook-Pro" = mkDarwinSystem "Mikaels-MacBook-Pro";
+        "Mikael-Aidn" = mkDarwinSystem "Mikael-Aidn";
+        "Mikaels-Virtual-Machine" = mkDarwinSystem "Mikaels-Virtual-Machine";
+      };
     };
 }
