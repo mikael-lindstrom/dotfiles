@@ -3,5 +3,5 @@
 set -euo pipefail
 
 nix flake update
-dotfiles-build
-dotfiles-latest-diff
+dotfiles-build.sh
+dotfiles-latest-diff.sh
