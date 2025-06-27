@@ -1,4 +1,4 @@
-{ system, src, pkgs, unstable-pkgs, neovim-flake, ... }:
+{ system, src, pkgs, unstable-pkgs, neovim-flake, opencode-flake, ... }:
 
 let
   configDir = "${src}/config";
@@ -22,6 +22,7 @@ in
     pkgs.tmux
     pkgs.xq
     neovim-flake.packages.${system}.default
+    opencode-flake.packages.${system}.default
   ];
 
   home.file = { };

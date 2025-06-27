@@ -31,6 +31,7 @@
     };
 
     neovim-flake.url = "github:mikael-lindstrom/neovim-flake";
+    opencode-flake.url = "github:mikael-lindstrom/opencode-flake";
   };
 
   outputs = inputs@{ self, ... }:
@@ -46,7 +47,7 @@
           inherit system pkgs;
           specialArgs = {
             inherit system user src unstable-pkgs;
-            inherit (inputs) home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
+            inherit (inputs) home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake opencode-flake;
           };
           modules = [
             ./modules/nix-homebrew
