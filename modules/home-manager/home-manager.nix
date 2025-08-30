@@ -10,7 +10,7 @@ in
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli
-    unstable-pkgs.azure-cli
+    pkgs.azure-cli
     pkgs.cargo
     unstable-pkgs.devbox
     pkgs.gh
