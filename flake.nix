@@ -42,27 +42,14 @@
       unstable-pkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
       src = self;
 
-      mkDarwinSystem = hostname:
-        inputs.darwin.lib.darwinSystem {
-          inherit system pkgs;
-          specialArgs = {
-            inherit system user src unstable-pkgs;
-            inherit (inputs) home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake opencode-flake;
-          };
-          modules = [
-            ./modules/nix-homebrew
-            ./modules/darwin
-            ./modules/home-manager/default.nix
-          ];
-        };
     in
     {
       formatter.aarch64-darwin = pkgs.nixpkgs-fmt;
 
       darwinConfigurations = {
-        "Mikaels-MacBook-Pro" = mkDarwinSystem "Mikaels-MacBook-Pro";
-        "Mikael-Aidn" = mkDarwinSystem "Mikael-Aidn";
-        "Mikaels-Virtual-Machine" = mkDarwinSystem "Mikaels-Virtual-Machine";
+        "Mikaels-MacBook-Pro" = import ./machines/mikaels-macbook-pro { inherit inputs user system pkgs unstable-pkgs src; };
+        "Mikael-Aidn" = import ./machines/mikael-aidn { inherit inputs user system pkgs unstable-pkgs src; };
+        "Mikaels-Virtual-Machine" = import ./machines/mikaels-virtual-machine { inherit inputs user system pkgs unstable-pkgs src; };
       };
     };
 }
