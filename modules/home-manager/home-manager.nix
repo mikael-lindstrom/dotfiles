@@ -34,6 +34,7 @@ in
   xdg.configFile = {
     "alacritty".source = "${configDir}/alacritty";
     "ghostty".source = "${configDir}/ghostty";
+    "opencode/opencode.json".source = "${configDir}/opencode/opencode.json";
     "starship.toml".source = "${configDir}/starship.toml";
   };
 
