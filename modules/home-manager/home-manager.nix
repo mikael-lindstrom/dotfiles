@@ -48,6 +48,7 @@ in
     "ll" = "ls -lh";
     "la" = "ls -lah";
     "vim" = "nvim";
+    "gswf" = "git branch | fzf | xargs git switch";
   };
 
   programs.home-manager.enable = true;
