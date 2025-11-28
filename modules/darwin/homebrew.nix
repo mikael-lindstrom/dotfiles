@@ -23,7 +23,6 @@
 
     casks = [
       "1password"
-      "alacritty"
       "google-chrome"
       "discord"
       "docker-desktop"
