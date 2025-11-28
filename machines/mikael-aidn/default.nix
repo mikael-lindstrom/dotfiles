@@ -18,4 +18,3 @@ inputs.darwin.lib.darwinSystem {
     ./zscaler.nix
   ];
 }
-

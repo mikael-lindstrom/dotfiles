@@ -1,4 +1,6 @@
-{ config, ... }: let
+{ ... }: 
+
+let
   cert = ''
     Zscaler root CA
     =========
