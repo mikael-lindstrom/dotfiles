@@ -121,7 +121,7 @@ in
       '';
       plugins = [
         pkgs.tmuxPlugins.vim-tmux-navigator
-        unstable-pkgs.tmuxPlugins.gruvbox
+        pkgs.tmuxPlugins.gruvbox
         pkgs.tmuxPlugins.resurrect
         {
           plugin = pkgs.tmuxPlugins.continuum;
