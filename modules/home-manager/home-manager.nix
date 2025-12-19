@@ -49,6 +49,10 @@ in
     "gswf" = "git branch | fzf | xargs git switch";
   };
 
+  # Disable manual generation to avoid builtins.toFile warning
+  # Issue: https://github.com/nix-community/home-manager/issues/7935
+  manual.manpages.enable = false;
+
   programs.home-manager.enable = true;
 
   programs.bash = {
