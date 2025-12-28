@@ -118,6 +118,7 @@ in
         bind-key -T copy-mode-vi 'v' send -X begin-selection
         bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
+        set -g focus-events on
         set -g status-position top
         set -gu default-command
         set -g default-shell "${pkgs.zsh}/bin/zsh"
