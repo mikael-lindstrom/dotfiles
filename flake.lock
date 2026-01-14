@@ -280,11 +280,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1767334768,
-        "narHash": "sha256-QaOJAq2/OOM70G+IHM0wdPoOenvOdbKdyn/8Md0LenQ=",
+        "lastModified": 1768371848,
+        "narHash": "sha256-k4+WjtVQPJORpXkA0mhwpCwhOI/+DOh5zuxcLMu/dNw=",
         "owner": "mikael-lindstrom",
         "repo": "opencode-flake",
-        "rev": "5977f498cc9330503b18476ed171edbbe9b087c6",
+        "rev": "84cac9bb925e15f29e208b610677bd5d9eca2c23",
         "type": "github"
       },
       "original": {
