@@ -101,7 +101,8 @@ in
       escapeTime = 10;
       sensibleOnTop = false;
       extraConfig = ''
-        set-option -sa terminal-features ",alacritty*:RGB"
+        set -s extended-keys on
+        set-option -sa terminal-features ",ghostty:RGB,extkeys"
         bind -r j resize-pane -D 5
         bind -r k resize-pane -U 5
         bind -r l resize-pane -R 5
