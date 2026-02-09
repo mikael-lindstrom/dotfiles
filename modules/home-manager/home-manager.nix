@@ -102,7 +102,8 @@ in
       sensibleOnTop = false;
       extraConfig = ''
         set -s extended-keys on
-        set-option -sa terminal-features ",ghostty:RGB,extkeys"
+        set -s extended-keys-format csi-u
+        set-option -sa terminal-features ",ghostty:RGB,extkeys,bpaste"
         bind -r j resize-pane -D 5
         bind -r k resize-pane -U 5
         bind -r l resize-pane -R 5
