@@ -141,6 +141,10 @@ in
 
   programs.direnv = {
     enable = true;
+    package = pkgs.direnv.overrideAttrs (_: {
+      # Work around fish test failures: https://github.com/NixOS/nixpkgs/issues/507531
+      doCheck = false;
+    });
     nix-direnv.enable = true;
   };
 }
