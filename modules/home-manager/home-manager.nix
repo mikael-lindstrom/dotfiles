@@ -33,6 +33,7 @@ in
   xdg.configFile = {
     "ghostty".source = "${configDir}/ghostty";
     "opencode/opencode.json".source = "${configDir}/opencode/opencode.json";
+    "opencode/tui.json".source = "${configDir}/opencode/tui.json";
     "starship.toml".source = "${configDir}/starship.toml";
   };
 

@@ -1,7 +1,6 @@
 {
     "$schema": "https://opencode.ai/config.json",
-    "theme": "gruvbox",
-    "model": "openai/gpt-5.3-code",
+    "model": "openai/gpt-5.5",
     "small_model": "openai/gpt-5-mini",
     "share": "disabled",
     "permission": {
@@ -15,5 +14,14 @@
         },
         "external_directory": "ask",
         "doom_loop": "ask"
+    },
+    "provider": {
+        "openai": {
+            "options": {
+                "chunkTimeout": 60000,
+                "headerTimeout": 60000,
+                "timeout": 60000
+            }
+        }
     }
 }
