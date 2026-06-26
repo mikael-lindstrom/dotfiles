@@ -1,4 +1,4 @@
-{ system, src, pkgs, unstable-pkgs, neovim-flake, opencode-flake, ... }:
+{ config, system, src, pkgs, unstable-pkgs, neovim-flake, opencode-flake, ... }:
 
 let
   configDir = "${src}/config";
@@ -16,7 +16,7 @@ in
     pkgs.git
     pkgs.go
     pkgs.inetutils
-    pkgs.neofetch
+    pkgs.fastfetch
     pkgs.ripgrep
     pkgs.tmux
     pkgs.xq
@@ -62,6 +62,7 @@ in
 
   programs.zsh = {
     enable = true;
+    dotDir = config.home.homeDirectory;
     oh-my-zsh = {
       enable = true;
       plugins = [
