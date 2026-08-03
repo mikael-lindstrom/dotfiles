@@ -29,6 +29,7 @@
       "elgato-control-center"
       "elgato-wave-link"
       "ghostty"
+      "kitlangton-hex"
       "multipass"
       "raycast"
       "rectangle"
