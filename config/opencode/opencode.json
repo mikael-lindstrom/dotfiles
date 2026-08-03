@@ -18,9 +18,9 @@
     "provider": {
         "openai": {
             "options": {
-                "chunkTimeout": 60000,
-                "headerTimeout": 60000,
-                "timeout": 60000
+                "chunkTimeout": 300000,
+                "headerTimeout": false,
+                "timeout": false
             }
         }
     }
