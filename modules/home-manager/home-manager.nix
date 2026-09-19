@@ -21,7 +21,8 @@ in
     pkgs.tmux
     pkgs.xq
     neovim-flake.packages.${system}.default
-    opencode-flake.packages.${system}.default
+    opencode-flake.packages.${system}.opencode
+    opencode-flake.packages.${system}.opencode2
   ];
 
   home.file = { };
