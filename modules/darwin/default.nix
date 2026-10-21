@@ -40,5 +40,15 @@
   # Currently needs to be set https://github.com/LnL7/nix-darwin/issues/682
   users.users.${user}.home = "/Users/${user}";
 
+  # Roots with compromised eMudhra intermediates (CVE-2026-111943). Mirrors
+  # NixOS/nixpkgs#576390, which only patched the NixOS module, not nix-darwin.
+  # Open PR https://github.com/nix-darwin/nix-darwin/pull/1877
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+    "emSign Root CA - C1"
+    "emSign ECC Root CA - C3"
+  ];
+
   system.stateVersion = 4;
 }
