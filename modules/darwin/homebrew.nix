@@ -37,7 +37,6 @@
       "slack"
       "steam"
       "spotify"
-      "utm"
       "vlc"
     ];
   };
