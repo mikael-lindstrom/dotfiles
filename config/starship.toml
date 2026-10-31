@@ -52,3 +52,6 @@ style = 'blue'
 unknown_msg = 'unknown-nix-shell'
 heuristic = true
 format = '\[[$state( \($name\))](bold blue)\]'
+
+[fill]
+symbol = " "
