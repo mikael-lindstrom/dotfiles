@@ -78,7 +78,7 @@ in
 
   programs.bat = {
     enable = true;
-    config.theme = "gruvbox-dark";
+    config.theme = "ansi";
   };
 
   programs.starship = {
@@ -105,6 +105,7 @@ in
       escapeTime = 10;
       sensibleOnTop = false;
       extraConfig = ''
+        source-file "${configDir}/tmux/roasted-umber.conf"
         set -s extended-keys on
         set -s extended-keys-format csi-u
         set-option -sa terminal-features ",ghostty:RGB,extkeys,bpaste"
@@ -131,7 +132,6 @@ in
       '';
       plugins = [
         pkgs.tmuxPlugins.vim-tmux-navigator
-        pkgs.tmuxPlugins.gruvbox
         pkgs.tmuxPlugins.resurrect
         {
           plugin = pkgs.tmuxPlugins.continuum;

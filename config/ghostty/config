@@ -8,23 +8,27 @@ shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
 
-palette = 0=#282828
-palette = 1=#cc241d
-palette = 2=#98971a
-palette = 3=#d79921
-palette = 4=#458588
-palette = 5=#b16286
-palette = 6=#689d6a
-palette = 7=#a89984
+palette = 0=#241c15
+palette = 1=#cf6f52
+palette = 2=#96a86a
+palette = 3=#d3a35f
+palette = 4=#8c95a8
+palette = 5=#b58a92
+palette = 6=#8fac93
+palette = 7=#bfae9d
 
-palette = 8=#928374
-palette = 9=#fb4934
-palette = 10=#b8bb26
-palette = 11=#fabd2f
-palette = 12=#83a598
-palette = 13=#d3869b
-palette = 14=#8ec07c
-palette = 15=#ebdbb2
+palette = 8=#6d5e50
+palette = 9=#df8a6e
+palette = 10=#afbf84
+palette = 11=#e4bb7d
+palette = 12=#a6afc0
+palette = 13=#c9a4ab
+palette = 14=#a8c3ab
+palette = 15=#efe3d5
 
-background = 282828
-foreground = ebdbb2
+background = 16110d
+foreground = d9c8b8
+cursor-color = c98a4b
+cursor-text = 16110d
+selection-background = 3e3225
+selection-foreground = efe3d5
