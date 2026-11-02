@@ -105,7 +105,6 @@ in
       escapeTime = 10;
       sensibleOnTop = false;
       extraConfig = ''
-        source-file "${configDir}/tmux/roasted-umber.conf"
         set -s extended-keys on
         set -s extended-keys-format csi-u
         set-option -sa terminal-features ",ghostty:RGB,extkeys,bpaste"
