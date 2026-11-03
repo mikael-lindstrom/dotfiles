@@ -12,7 +12,6 @@ in
     pkgs.awscli
     pkgs.azure-cli
     pkgs.cargo
-    pkgs.gh
     pkgs.git
     pkgs.go
     pkgs.inetutils
@@ -57,6 +56,14 @@ in
   manual.manpages.enable = false;
 
   programs.home-manager.enable = true;
+
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = false;
+    extensions = [
+      unstable-pkgs.gh-stack
+    ];
+  };
 
   programs.bash = {
     enable = true;
