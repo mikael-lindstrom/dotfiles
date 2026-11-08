@@ -14,6 +14,8 @@ inputs.darwin.lib.darwinSystem {
     ../../modules/darwin
     ../../modules/home-manager/default.nix
 
+    ./home-manager.nix
+
     {
       homebrew.casks = [ "tailscale-app" ];
     }

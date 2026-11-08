@@ -10,7 +10,6 @@ in
     pkgs.argocd
     pkgs.aws-vault
     pkgs.awscli
-    pkgs.azure-cli
     pkgs.cargo
     pkgs.git
     pkgs.go
@@ -75,7 +74,6 @@ in
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "azure"
         "git"
         "kubectl"
       ];

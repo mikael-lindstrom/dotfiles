@@ -1,7 +1,12 @@
-{ system, user, src, pkgs, unstable-pkgs, home-manager, neovim-flake, opencode-flake, hostname, ... }:
+{ system, user, src, pkgs, lib, unstable-pkgs, home-manager, neovim-flake, opencode-flake, hostname, ... }:
 
 {
-  imports = [ home-manager.darwinModules.home-manager ];
+  imports = [
+    (if lib.hasSuffix "-darwin" system then
+      home-manager.darwinModules.home-manager
+    else
+      home-manager.nixosModules.home-manager)
+  ];
 
   home-manager = {
     useGlobalPkgs = true;

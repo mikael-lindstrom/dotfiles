@@ -15,6 +15,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     homebrew-core = {
@@ -44,12 +51,17 @@
 
     in
     {
-      formatter.aarch64-darwin = pkgs.nixpkgs-fmt;
+      formatter.aarch64-darwin = inputs.nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
+      formatter.x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
       darwinConfigurations = {
         "Mikaels-MacBook-Pro" = import ./machines/mikaels-macbook-pro { inherit inputs user system pkgs unstable-pkgs src; };
         "Mikael-Aidn" = import ./machines/mikael-aidn { inherit inputs user system pkgs unstable-pkgs src; };
         "Mikaels-Virtual-Machine" = import ./machines/mikaels-virtual-machine { inherit inputs user system pkgs unstable-pkgs src; };
+      };
+
+      nixosConfigurations = {
+        nuc = import ./machines/nuc { inherit inputs user src; };
       };
     };
 }
