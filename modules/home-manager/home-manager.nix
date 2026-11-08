@@ -9,7 +9,7 @@ in
   home.packages = [
     pkgs.argocd
     pkgs.aws-vault
-    pkgs.awscli
+    pkgs.awscli2
     pkgs.cargo
     pkgs.git
     pkgs.go
