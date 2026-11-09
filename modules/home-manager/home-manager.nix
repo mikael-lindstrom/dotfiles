@@ -32,7 +32,6 @@ in
     "ghostty".source = "${configDir}/ghostty";
     "opencode/cli.json".source = "${configDir}/opencode/cli.json";
     "opencode/opencode.json".source = "${configDir}/opencode/opencode.json";
-    "opencode/tui.json".source = "${configDir}/opencode/tui.json";
     "starship.toml".source = "${configDir}/starship.toml";
   };
 

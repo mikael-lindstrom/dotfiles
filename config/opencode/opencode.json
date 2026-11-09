@@ -1,30 +1,59 @@
 {
     "$schema": "https://opencode.ai/config.json",
     "model": "openai/gpt-6.1-sol",
-    "small_model": "openai/gpt-6-luna",
     "share": "disabled",
-    "permission": {
-        "*": "allow",
-        "bash": {
-            "*": "ask",
-            "git status*": "allow",
-            "git diff*": "allow",
-            "git log*": "allow",
-            "git show*": "allow"
-        },
-        "external_directory": "ask",
-        "doom_loop": "ask"
+    "agents": {
+        "title": {
+            "model": "openai/gpt-6-luna"
+        }
     },
-    "provider": {
+    "permissions": [
+        {
+            "action": "*",
+            "resource": "*",
+            "effect": "allow"
+        },
+        {
+            "action": "shell",
+            "resource": "*",
+            "effect": "ask"
+        },
+        {
+            "action": "shell",
+            "resource": "git status*",
+            "effect": "allow"
+        },
+        {
+            "action": "shell",
+            "resource": "git diff*",
+            "effect": "allow"
+        },
+        {
+            "action": "shell",
+            "resource": "git log*",
+            "effect": "allow"
+        },
+        {
+            "action": "shell",
+            "resource": "git show*",
+            "effect": "allow"
+        },
+        {
+            "action": "external_directory",
+            "resource": "*",
+            "effect": "ask"
+        }
+    ],
+    "providers": {
         "openai": {
-            "options": {
+            "settings": {
                 "chunkTimeout": 300000,
                 "headerTimeout": false,
                 "timeout": false
             },
             "models": {
                 "gpt-6.1-sol": {
-                    "options": {
+                    "settings": {
                         "reasoningEffort": "xhigh"
                     }
                 }
