@@ -1,5 +1,6 @@
 format = """
 $directory\
+$hostname\
 $git_branch\
 $git_commit\
 $git_state\
@@ -38,6 +39,11 @@ format = '\[[⏱ $duration]($style)\]'
 [directory]
 read_only = " "
 truncation_symbol = '../'
+
+[hostname]
+ssh_only = true
+format = '\[[$hostname]($style)\] '
+style = 'blue'
 
 [kubernetes]
 format = '\[[$symbol$context( \($namespace\))]($style)\]'
