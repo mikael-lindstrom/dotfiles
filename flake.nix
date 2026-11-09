@@ -38,7 +38,6 @@
     };
 
     neovim-flake.url = "github:mikael-lindstrom/neovim-flake";
-    opencode-flake.url = "github:mikael-lindstrom/opencode-flake";
   };
 
   outputs = inputs@{ self, ... }:

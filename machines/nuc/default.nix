@@ -11,7 +11,7 @@ inputs.nixpkgs-unstable.lib.nixosSystem {
     inherit system user src hostname;
     unstable-pkgs = pkgs;
     home-manager = inputs.home-manager-unstable;
-    inherit (inputs) neovim-flake opencode-flake;
+    inherit (inputs) neovim-flake;
   };
   modules = [
     inputs.determinate.nixosModules.default

@@ -7,7 +7,7 @@ inputs.darwin.lib.darwinSystem {
   inherit system;
   specialArgs = {
     inherit system user src pkgs unstable-pkgs hostname;
-    inherit (inputs) home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake opencode-flake;
+    inherit (inputs) home-manager nix-homebrew homebrew-core homebrew-bundle homebrew-cask neovim-flake;
   };
   modules = [
     ../../modules/nix-homebrew

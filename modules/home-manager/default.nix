@@ -1,4 +1,4 @@
-{ system, user, src, pkgs, lib, unstable-pkgs, home-manager, neovim-flake, opencode-flake, hostname, ... }:
+{ system, user, src, pkgs, lib, unstable-pkgs, home-manager, neovim-flake, hostname, ... }:
 
 {
   imports = [
@@ -12,7 +12,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit system src pkgs unstable-pkgs neovim-flake opencode-flake;
+      inherit system src pkgs unstable-pkgs neovim-flake;
     };
     users.${user}.imports = [ ./home-manager.nix ];
   };
