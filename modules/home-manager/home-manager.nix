@@ -54,6 +54,18 @@ in
 
   programs.home-manager.enable = true;
 
+  programs.claude-code = {
+    enable = true;
+    package = unstable-pkgs.claude-code;
+    settings = {
+      # No co-author trailer on commits or footer on pull requests.
+      attribution = {
+        commit = "";
+        pr = "";
+      };
+    };
+  };
+
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = false;
