@@ -1,9 +1,12 @@
-{ inputs, user, src }:
+{ inputs, user, src, nixpkgs-config }:
 
 let
   system = "x86_64-linux";
   hostname = "nuc";
-  pkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
+  pkgs = import inputs.nixpkgs-unstable {
+    inherit system;
+    config = nixpkgs-config;
+  };
 in
 inputs.nixpkgs-unstable.lib.nixosSystem {
   inherit system;

@@ -3,6 +3,8 @@
 {
   imports = [ ./homebrew.nix ];
 
+  nixpkgs.pkgs = pkgs;
+
   # Add homebrew to the system path
   environment.systemPath = [ "/opt/homebrew/bin" "/opt/homebrew/sbin" ];
 

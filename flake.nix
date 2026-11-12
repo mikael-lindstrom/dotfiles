@@ -44,8 +44,17 @@
     let
       user = "mikael";
       system = "aarch64-darwin";
-      pkgs = inputs.nixpkgs.legacyPackages.${system};
-      unstable-pkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
+      nixpkgs-config = {
+        allowUnfreePredicate = pkg: inputs.nixpkgs.lib.getName pkg == "claude-code";
+      };
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config = nixpkgs-config;
+      };
+      unstable-pkgs = import inputs.nixpkgs-unstable {
+        inherit system;
+        config = nixpkgs-config;
+      };
       src = self;
 
     in
@@ -60,7 +69,7 @@
       };
 
       nixosConfigurations = {
-        nuc = import ./machines/nuc { inherit inputs user src; };
+        nuc = import ./machines/nuc { inherit inputs user src nixpkgs-config; };
       };
     };
 }

@@ -1,6 +1,8 @@
-{ user, pkgs, ... }:
+{ user, pkgs, unstable-pkgs, ... }:
 
 {
+  nixpkgs.pkgs = unstable-pkgs;
+
   networking.networkmanager.enable = true;
 
   programs.zsh.enable = true;
